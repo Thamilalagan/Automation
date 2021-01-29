@@ -18,16 +18,11 @@ public class AddCustomerTest extends TestBase {
 		driver.findElement(By.cssSelector(OR.getProperty("firstname"))).sendKeys(firstName);
 		driver.findElement(By.cssSelector(OR.getProperty("lastname"))).sendKeys(lastName);
 		driver.findElement(By.cssSelector(OR.getProperty("postcode"))).sendKeys(postCode);
-		Thread.sleep(5000);
 		driver.findElement(By.cssSelector(OR.getProperty("addbtn"))).click();
-		Thread.sleep(5000);
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-		//Assert.assertTrue(alert.getText().startsWith("Customer"));
 		System.out.println(alerttext);
 		Assert.assertTrue(alert.getText().contains(alerttext));
-		Thread.sleep(5000);
 		alert.accept();
-		Thread.sleep(5000);
 	}
 	
 	@DataProvider
