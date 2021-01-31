@@ -35,6 +35,14 @@ public class TestDropdowns {
 			System.out.println(values.get(i).getAttribute("lang"));
 		}
 		
+		//WebElement block = driver.findElement(By.xpath("//*[@id='www-wikipedia-org']/div[7]/div[3]"));
+		
+		
+		List <WebElement> links = driver.findElements(By.tagName("a"));
+		System.out.println("Total links are "+ links.size());
+		for(WebElement link: links) {
+			System.out.println(link.getText()+ "- - URL IS- -"+ link.getAttribute("href"));
+		}
 
 		
 
