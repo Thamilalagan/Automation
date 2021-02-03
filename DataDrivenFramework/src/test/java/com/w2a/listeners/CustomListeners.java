@@ -25,7 +25,7 @@ public class CustomListeners extends TestBase implements ITestListener {
 		}
 		
 		test.log(LogStatus.FAIL, result.getName().toUpperCase()+"Failed with exception"+result.getThrowable());
-		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+		//test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 
 		
 		Reporter.log("Click to see Screenshot");
