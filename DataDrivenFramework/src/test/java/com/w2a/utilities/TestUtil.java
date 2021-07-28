@@ -19,7 +19,7 @@ public class TestUtil extends TestBase{
 		
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		Date date = new Date();
-		String screenshotName = date.toString().replace(":", "_").replace(" ", "_")+".jpg";
+		screenshotName = date.toString().replace(":", "_").replace(" ", "_")+".jpg";
 
 		//screenshotName = "error.jpg";
 		FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\"+screenshotName));

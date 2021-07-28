@@ -1,4 +1,4 @@
-package com.w2a.testcases;
+package com.w2a.javaExamples;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,22 +10,22 @@ import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestDragAndDrop {
+public class TestSliders {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://jqueryui.com/resources/demos/droppable/default.html");
+		driver.get("https://jqueryui.com/resources/demos/slider/default.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		WebElement drag = driver.findElement(By.xpath("//*[@id=\"draggable\"]"));
-		WebElement drop = driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
+		WebElement slide = driver.findElement(By.xpath("//*[@id=\"slider\"]"));
+		int width = slide.getSize().width/2;
+		WebElement slider = driver.findElement(By.xpath("//*[@id=\"slider\"]/span"));
 		
-		Actions action = new Actions(driver);
-		action.dragAndDrop(drag, drop).perform();
+		new Actions(driver).dragAndDropBy(slider, width, 0).perform();
 
 	}
 

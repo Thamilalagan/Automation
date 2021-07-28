@@ -1,4 +1,4 @@
-package com.w2a.testcases;
+package com.w2a.javaExamples;
 
 import java.util.concurrent.TimeUnit;
 

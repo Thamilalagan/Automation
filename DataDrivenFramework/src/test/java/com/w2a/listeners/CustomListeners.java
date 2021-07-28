@@ -14,18 +14,18 @@ import com.w2a.utilities.TestUtil;
 public class CustomListeners extends TestBase implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		
 		try {
 			TestUtil.captureScreenshot();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		test.log(LogStatus.FAIL, result.getName().toUpperCase()+"Failed with exception"+result.getThrowable());
-		//test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 
 		
 		Reporter.log("Click to see Screenshot");
